@@ -26,4 +26,20 @@ class ProductUrlStoreFacade extends SprykerProductFacade implements ProductUrlSt
             ->createProductUrlManager()
             ->createProductUrl($productAbstractTransfer);
     }
+
+    /**
+     * {@inheritdoc}
+     *
+     * @api
+     *
+     * @param \Generated\Shared\Transfer\ProductAbstractTransfer $productAbstractTransfer
+     *
+     * @return \Generated\Shared\Transfer\ProductUrlTransfer
+     */
+    public function updateProductAbstractUrl(ProductAbstractTransfer $productAbstractTransfer): ProductUrlTransfer
+    {
+        return $this->getFactory()
+            ->createProductUrlManager()
+            ->updateProductUrl($productAbstractTransfer);
+    }
 }

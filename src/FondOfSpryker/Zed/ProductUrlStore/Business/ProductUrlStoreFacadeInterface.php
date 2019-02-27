@@ -20,4 +20,17 @@ interface ProductUrlStoreFacadeInterface extends SprykerProductFacadeInterface
      */
     public function createProductAbstractUrl(ProductAbstractTransfer $productAbstractTransfer): ProductUrlTransfer;
 
+    /**
+     * Specification:
+     * - Updates localized abstract product URLs based on abstract product localized attributes name.
+     * - Executes touch logic for abstract product URL update.
+     *
+     * @api
+     *
+     * @param \Generated\Shared\Transfer\ProductAbstractTransfer $productAbstractTransfer
+     *
+     * @return \Generated\Shared\Transfer\ProductUrlTransfer
+     */
+    public function updateProductAbstractUrl(ProductAbstractTransfer $productAbstractTransfer): ProductUrlTransfer;
+
 }

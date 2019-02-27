@@ -21,7 +21,6 @@ class ProductUrlStoreFacade extends SprykerProductFacade implements ProductUrlSt
      */
     public function createProductUrl(ProductAbstractTransfer $productAbstractTransfer)
     {
-        exit('4');
         return $this->getFactory()
             ->createProductUrlManager()
             ->createProductUrl($productAbstractTransfer);
