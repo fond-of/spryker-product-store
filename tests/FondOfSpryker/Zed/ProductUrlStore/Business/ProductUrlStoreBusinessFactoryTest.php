@@ -1,16 +1,12 @@
 <?php
 
-namespace FondOfSprykerTest\Zed\ProductUrlStore\Business;
+namespace FondOfSpryker\Zed\ProductUrlStore\Business;
 
 use Codeception\Test\Unit;
-use FondOfSpryker\Zed\Product\Business\ProductUrlManagerInterface;
-use FondOfSpryker\Zed\ProductUrlStore\Business\ProductUrlManager;
-use FondOfSpryker\Zed\ProductUrlStore\Business\ProductUrlStoreBusinessFactory;
 use org\bovigo\vfs\vfsStream;
 
 class ProductUrlStoreBusinessFactoryTest extends Unit
 {
-
     /**
      * @var \org\bovigo\vfs\vfsStreamDirectory
      */
@@ -41,7 +37,4 @@ class ProductUrlStoreBusinessFactoryTest extends Unit
 
         $this->assertInstanceOf(ProductUrlManager::class, $productUrlManager);
     }
-
-
 }
-
