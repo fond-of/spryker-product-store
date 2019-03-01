@@ -1,6 +1,6 @@
 <?php
 
-namespace FondOfSpryker\Zed\ProductUrlStore\Business;
+namespace FondOfSpryker\Zed\ProductUrlStore;
 
 use Spryker\Zed\Product\Business\ProductBusinessFactory as SprykerProductBusinessFactory;
 use FondOfSpryker\Zed\ProductUrlStore\Business\ProductUrlManager;

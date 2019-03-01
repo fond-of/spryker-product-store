@@ -1,6 +1,6 @@
 <?php
 
-namespace FondOfSpryker\Zed\ProductUrlStore\Business;
+namespace FondOfSpryker\Zed\ProductUrlStore;
 
 use Spryker\Zed\Product\Business\ProductFacadeInterface as SprykerProductFacadeInterface;
 
