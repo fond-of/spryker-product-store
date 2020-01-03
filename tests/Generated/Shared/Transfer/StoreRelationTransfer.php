@@ -36,7 +36,7 @@ class StoreRelationTransfer extends AbstractTransfer
      *
      * @return $this
      */
-    public function setIdStores(array $idStores = null)
+    public function setIdStores(?array $idStores = null)
     {
         if ($idStores === null) {
             $idStores = [];
@@ -97,6 +97,4 @@ class StoreRelationTransfer extends AbstractTransfer
 
         return $this;
     }
-
-
 }
