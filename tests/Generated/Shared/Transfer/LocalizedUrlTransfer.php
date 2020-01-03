@@ -52,7 +52,7 @@ class LocalizedUrlTransfer extends AbstractTransfer
      *
      * @return $this
      */
-    public function setLocale(LocaleTransfer $locale = null)
+    public function setLocale(?LocaleTransfer $locale = null)
     {
         $this->locale = $locale;
         $this->modifiedProperties[self::LOCALE] = true;

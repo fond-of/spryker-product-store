@@ -6,10 +6,10 @@ use FondOfSpryker\Zed\ProductUrlStore\Dependency\Facade\ProductToUrlInterface;
 use FondOfSpryker\Zed\ProductUrlStore\Dependency\Facade\StoreToProductStoreUrlBridgeInterface;
 use FondOfSpryker\Zed\ProductUrlStore\ProductUrlStoreDependencyProvider;
 use Spryker\Zed\Product\Business\ProductBusinessFactory as SprykerProductBusinessFactory;
-use Spryker\Zed\Store\Business\StoreFacadeInterface;
 
 /**
  * @method \Spryker\Zed\Product\ProductConfig getConfig()
+ * @method \FondOfSpryker\Zed\ProductUrlStore\Persistence\ProductUrlStoreQueryContainer getQueryContainer()
  */
 class ProductUrlStoreBusinessFactory extends SprykerProductBusinessFactory
 {
@@ -30,7 +30,6 @@ class ProductUrlStoreBusinessFactory extends SprykerProductBusinessFactory
 
     /**
      * @return \FondOfSpryker\Zed\ProductUrlStore\Dependency\Facade\StoreToProductStoreUrlBridgeInterface
-     * @throws \Spryker\Zed\Kernel\Exception\Container\ContainerKeyNotFoundException
      */
     protected function getStoreFacade(): StoreToProductStoreUrlBridgeInterface
     {
@@ -39,7 +38,6 @@ class ProductUrlStoreBusinessFactory extends SprykerProductBusinessFactory
 
     /**
      * @return \FondOfSpryker\Zed\ProductUrlStore\Dependency\Facade\StoreToProductStoreUrlBridgeInterface
-     * @throws \Spryker\Zed\Kernel\Exception\Container\ContainerKeyNotFoundException
      */
     protected function getUrlFacade(): ProductToUrlInterface
     {

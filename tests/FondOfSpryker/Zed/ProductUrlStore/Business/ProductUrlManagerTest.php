@@ -321,6 +321,8 @@ class ProductUrlManagerTest extends Unit
     }
 
     /**
+     * @param \Generated\Shared\Transfer\ProductAbstractTransfer $productAbstractTransfer
+     *
      * @return \Generated\Shared\Transfer\ProductUrlTransfer
      */
     public function generateProductUrls(ProductAbstractTransfer $productAbstractTransfer)

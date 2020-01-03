@@ -12,7 +12,7 @@ class ProductUrlStoreDependencyProvider extends SprykerProductDependencyProvider
     public const FACADE_STORE = 'FACADE_STORE';
 
     /**
-     * @param  \Spryker\Zed\Kernel\Container  $container
+     * @param \Spryker\Zed\Kernel\Container $container
      *
      * @return \Spryker\Zed\Kernel\Container
      */
@@ -26,7 +26,8 @@ class ProductUrlStoreDependencyProvider extends SprykerProductDependencyProvider
     }
 
     /**
-     * @param  \Spryker\Zed\Kernel\Container  $container
+     * @param \Spryker\Zed\Kernel\Container $container
+     *
      * @return \Spryker\Zed\Kernel\Container
      */
     protected function addStoreFacade(Container $container): Container
@@ -39,7 +40,8 @@ class ProductUrlStoreDependencyProvider extends SprykerProductDependencyProvider
     }
 
     /**
-     * @param  \Spryker\Zed\Kernel\Container  $container
+     * @param \Spryker\Zed\Kernel\Container $container
+     *
      * @return \Spryker\Zed\Kernel\Container
      */
     protected function addUrlFacade(Container $container): Container

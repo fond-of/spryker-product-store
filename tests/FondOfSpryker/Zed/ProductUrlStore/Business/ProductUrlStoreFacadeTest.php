@@ -333,9 +333,11 @@ class ProductUrlStoreFacadeTest extends Unit
     }
 
     /**
+     * @param \Generated\Shared\Transfer\ProductAbstractTransfer $productAbstractTransfer
+     *
      * @return \Generated\Shared\Transfer\ProductUrlTransfer
      */
-    public function generateProductUrls(ProductAbstractTransfer $productAbstractTransfer)
+    public function generateProductUrls(ProductAbstractTransfer $productAbstractTransfer): ProductUrlTransfer
     {
         $productUrlTransfer = new ProductUrlTransfer();
         $productUrlTransfer->setAbstractSku($productAbstractTransfer->getSku());
