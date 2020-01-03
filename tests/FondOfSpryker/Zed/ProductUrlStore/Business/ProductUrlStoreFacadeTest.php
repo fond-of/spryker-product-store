@@ -4,6 +4,8 @@ namespace FondOfSpryker\Zed\ProductUrlStore\Business;
 
 use ArrayObject;
 use Codeception\Test\Unit;
+use FondOfSpryker\Zed\ProductUrlStore\Dependency\Facade\ProductToUrlInterface;
+use FondOfSpryker\Zed\ProductUrlStore\Dependency\Facade\StoreToProductStoreUrlBridgeInterface;
 use Generated\Shared\Transfer\LocaleTransfer;
 use Generated\Shared\Transfer\LocalizedAttributesTransfer;
 use Generated\Shared\Transfer\LocalizedUrlTransfer;
@@ -16,7 +18,6 @@ use Propel\Runtime\Connection\ConnectionInterface;
 use Spryker\Zed\Product\Business\Product\Url\ProductUrlGeneratorInterface;
 use Spryker\Zed\Product\Dependency\Facade\ProductToLocaleInterface;
 use Spryker\Zed\Product\Dependency\Facade\ProductToTouchInterface;
-use Spryker\Zed\Product\Dependency\Facade\ProductToUrlInterface;
 use Spryker\Zed\Product\Persistence\ProductQueryContainerInterface;
 
 class ProductUrlStoreFacadeTest extends Unit
@@ -37,7 +38,7 @@ class ProductUrlStoreFacadeTest extends Unit
     protected $productTouchFacadeMock;
 
     /**
-     * @var \Spryker\Zed\Product\Dependency\Facade\ProductToUrlInterface|\PHPUnit\Framework\MockObject\MockObject
+     * @var \FondOfSpryker\Zed\ProductUrlStore\Dependency\Facade\ProductToUrlInterface|\PHPUnit\Framework\MockObject\MockObject
      */
     protected $productUrlFacadeMock;
 
@@ -77,6 +78,11 @@ class ProductUrlStoreFacadeTest extends Unit
     protected $spyPersistenceUrlMock;
 
     /**
+     * @var \FondOfSpryker\Zed\ProductUrlStore\Dependency\Facade\StoreToProductStoreUrlBridgeInterface
+     */
+    protected $storeToProductStoreUrlBridgeInterface;
+
+    /**
      * @return void
      */
     public function _before()
@@ -89,6 +95,10 @@ class ProductUrlStoreFacadeTest extends Unit
                 ],
             ],
         ]);
+
+        $this->storeToProductStoreUrlBridgeInterface = $this->getMockBuilder(StoreToProductStoreUrlBridgeInterface::class)
+            ->disableOriginalConstructor()
+            ->getMock();
 
         $this->productLocalFacadeMock = $this->getMockBuilder(ProductToLocaleInterface::class)
             ->disableOriginalConstructor()
@@ -179,7 +189,8 @@ class ProductUrlStoreFacadeTest extends Unit
             $this->productTouchFacadeMock,
             $this->productLocalFacadeMock,
             $this->productQueryContainerMock,
-            $this->productUrlGeneratorMock
+            $this->productUrlGeneratorMock,
+            $this->storeToProductStoreUrlBridgeInterface
         );
 
         $this->productUrlStoreBusinessFactoryMock->expects($this->atLeastOnce())
@@ -229,7 +240,8 @@ class ProductUrlStoreFacadeTest extends Unit
             $this->productTouchFacadeMock,
             $this->productLocalFacadeMock,
             $this->productQueryContainerMock,
-            $this->productUrlGeneratorMock
+            $this->productUrlGeneratorMock,
+            $this->storeToProductStoreUrlBridgeInterface
         );
 
         $this->productUrlStoreBusinessFactoryMock->expects($this->atLeastOnce())

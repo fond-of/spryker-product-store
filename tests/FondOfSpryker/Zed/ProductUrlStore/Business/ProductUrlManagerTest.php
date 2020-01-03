@@ -4,6 +4,8 @@ namespace FondOfSpryker\Zed\ProductUrlStore\Business;
 
 use ArrayObject;
 use Codeception\Test\Unit;
+use FondOfSpryker\Zed\ProductUrlStore\Dependency\Facade\ProductToUrlInterface;
+use FondOfSpryker\Zed\ProductUrlStore\Dependency\Facade\StoreToProductStoreUrlBridgeInterface;
 use Generated\Shared\Transfer\LocaleTransfer;
 use Generated\Shared\Transfer\LocalizedAttributesTransfer;
 use Generated\Shared\Transfer\LocalizedUrlTransfer;
@@ -15,7 +17,6 @@ use Propel\Runtime\Connection\ConnectionInterface;
 use Spryker\Zed\Product\Business\Product\Url\ProductUrlGeneratorInterface;
 use Spryker\Zed\Product\Dependency\Facade\ProductToLocaleInterface;
 use Spryker\Zed\Product\Dependency\Facade\ProductToTouchInterface;
-use Spryker\Zed\Product\Dependency\Facade\ProductToUrlInterface;
 use Spryker\Zed\Product\Persistence\ProductQueryContainerInterface;
 
 class ProductUrlManagerTest extends Unit
@@ -41,7 +42,7 @@ class ProductUrlManagerTest extends Unit
     protected $productUrlTransfer;
 
     /**
-     * @var \Spryker\Zed\Product\Dependency\Facade\ProductToUrlInterface|\PHPUnit\Framework\MockObject\MockObject
+     * @var \FondOfSpryker\Zed\ProductUrlStore\Dependency\Facade\ProductToUrlInterface|\PHPUnit\Framework\MockObject\MockObject
      */
     protected $productUrlFacadeMock;
 
@@ -81,10 +82,19 @@ class ProductUrlManagerTest extends Unit
     protected $spyPersistenceUrlMock;
 
     /**
+     * @var \FondOfSpryker\Zed\ProductUrlStore\Dependency\Facade\StoreToProductStoreUrlBridgeInterface
+     */
+    protected $storeToProductStoreUrlBridgeInterface;
+
+    /**
      * @return void
      */
     public function _before()
     {
+        $this->storeToProductStoreUrlBridgeInterface = $this->getMockBuilder(StoreToProductStoreUrlBridgeInterface::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+
         $this->productAbstractTransferMock = $this->getMockBuilder('\Generated\Shared\Transfer\ProductAbstractTransfer')
             ->disableOriginalConstructor()
             ->getMock();
@@ -171,7 +181,8 @@ class ProductUrlManagerTest extends Unit
             $this->productTouchFacadeMock,
             $this->productLocalFacadeMock,
             $this->productQueryContainerMock,
-            $this->productUrlGeneratorMock
+            $this->productUrlGeneratorMock,
+            $this->storeToProductStoreUrlBridgeInterface
         );
 
         $productUrl = $productUrlManager->createProductUrl($this->productAbstractTransfer);
@@ -219,7 +230,8 @@ class ProductUrlManagerTest extends Unit
             $this->productTouchFacadeMock,
             $this->productLocalFacadeMock,
             $this->productQueryContainerMock,
-            $this->productUrlGeneratorMock
+            $this->productUrlGeneratorMock,
+            $this->storeToProductStoreUrlBridgeInterface
         );
 
         $productUrl = $productUrlManager->updateProductUrl($this->productAbstractTransfer);
