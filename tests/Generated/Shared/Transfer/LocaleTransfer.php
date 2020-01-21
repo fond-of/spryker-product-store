@@ -69,5 +69,4 @@ class LocaleTransfer extends AbstractTransfer
     {
         return $this->localeName;
     }
-
 }

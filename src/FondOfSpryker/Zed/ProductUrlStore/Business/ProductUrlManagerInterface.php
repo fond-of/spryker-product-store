@@ -6,5 +6,4 @@ use Spryker\Zed\Product\Business\Product\Url\ProductUrlManagerInterface as Spryk
 
 interface ProductUrlManagerInterface extends SprykerProductUrlManagerInterface
 {
-
 }

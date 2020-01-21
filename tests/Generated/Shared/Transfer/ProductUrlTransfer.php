@@ -85,5 +85,4 @@ class ProductUrlTransfer extends AbstractTransfer
 
         return $this;
     }
-
 }

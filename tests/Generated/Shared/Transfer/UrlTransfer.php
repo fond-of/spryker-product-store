@@ -173,5 +173,4 @@ class UrlTransfer extends AbstractTransfer
     {
         return $this->idUrl;
     }
-
 }

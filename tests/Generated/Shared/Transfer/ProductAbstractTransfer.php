@@ -20,10 +20,12 @@ class ProductAbstractTransfer extends AbstractTransfer
      * @var array
      */
     protected $fields = [];
+
     /**
      * @var int
      */
     protected $idProductAbstract;
+
     /**
      * @param int $idProductAbstract
      *
@@ -35,6 +37,7 @@ class ProductAbstractTransfer extends AbstractTransfer
         $this->modifiedProperties[self::ID_PRODUCT_ABSTRACT] = true;
         return $this;
     }
+
     /**
      * @module ProductApi
      *
@@ -64,7 +67,7 @@ class ProductAbstractTransfer extends AbstractTransfer
      *
      * @return $this
      */
-    public function setAttributes(array $attributes = null)
+    public function setAttributes(?array $attributes = null)
     {
         if ($attributes === null) {
             $attributes = [];
@@ -118,7 +121,7 @@ class ProductAbstractTransfer extends AbstractTransfer
      *
      * @return $this
      */
-    public function setStoreRelation(StoreRelationTransfer $storeRelation = null)
+    public function setStoreRelation(?StoreRelationTransfer $storeRelation = null)
     {
         $this->storeRelation = $storeRelation;
         $this->modifiedProperties[self::STORE_RELATION] = true;
@@ -160,5 +163,4 @@ class ProductAbstractTransfer extends AbstractTransfer
     {
         return $this->sku;
     }
-
 }

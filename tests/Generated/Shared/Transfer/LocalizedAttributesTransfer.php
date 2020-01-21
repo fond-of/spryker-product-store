@@ -29,7 +29,7 @@ class LocalizedAttributesTransfer extends AbstractTransfer
      *
      * @return $this
      */
-    public function setLocale(LocaleTransfer $locale = null)
+    public function setLocale(?LocaleTransfer $locale = null)
     {
         $this->locale = $locale;
         $this->modifiedProperties[self::LOCALE] = true;
@@ -54,7 +54,7 @@ class LocalizedAttributesTransfer extends AbstractTransfer
      *
      * @return $this
      */
-    public function setAttributes(array $attributes = null)
+    public function setAttributes(?array $attributes = null)
     {
         if ($attributes === null) {
             $attributes = [];
