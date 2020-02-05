@@ -12,7 +12,7 @@ use Spryker\Zed\Product\Business\ProductFacade as SprykerProductFacade;
 class ProductUrlStoreFacade extends SprykerProductFacade implements ProductUrlStoreFacadeInterface
 {
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      *
      * @api
      *
@@ -28,7 +28,7 @@ class ProductUrlStoreFacade extends SprykerProductFacade implements ProductUrlSt
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      *
      * @api
      *

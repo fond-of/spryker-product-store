@@ -12,8 +12,6 @@ class StoreToProductStoreUrlBridge implements StoreToProductStoreUrlBridgeInterf
     protected $storeFacade;
 
     /**
-     * StoreToProductStoreUrlBridge constructor.
-     *
      * @param \Spryker\Zed\Store\Business\StoreFacadeInterface $storeFacade
      */
     public function __construct(StoreFacadeInterface $storeFacade)

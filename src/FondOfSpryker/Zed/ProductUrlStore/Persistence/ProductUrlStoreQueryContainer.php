@@ -7,7 +7,7 @@ use Spryker\Zed\Product\Persistence\ProductQueryContainer as SprykerProductQuery
 class ProductUrlStoreQueryContainer extends SprykerProductQueryContainer implements ProductUrlStoreQueryContainerInterface
 {
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      *
      * @api
      *

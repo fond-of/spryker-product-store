@@ -8,6 +8,8 @@ use Spryker\Zed\Product\Dependency\Plugin\ProductAbstractPluginUpdateInterface;
 
 /**
  * @method \FondOfSpryker\Zed\Product\Business\ProductFacadeInterface getFacade()
+ * @method \FondOfSpryker\Zed\ProductUrlStore\ProductUrlStoreConfig getConfig()
+ * @method \FondOfSpryker\Zed\ProductUrlStore\Persistence\ProductUrlStoreQueryContainerInterface getQueryContainer()
  */
 class UrlProductAbstractAfterUpdatePlugin extends AbstractPlugin implements ProductAbstractPluginUpdateInterface
 {

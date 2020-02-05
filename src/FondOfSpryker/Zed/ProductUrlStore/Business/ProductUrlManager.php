@@ -27,8 +27,6 @@ class ProductUrlManager extends SprykerProductUrlMananger implements ProductUrlM
     protected $urlFacade;
 
     /**
-     * ProductUrlManager constructor.
-     *
      * @param \FondOfSpryker\Zed\ProductUrlStore\Dependency\Facade\ProductToUrlInterface $urlFacade
      * @param \Spryker\Zed\Product\Dependency\Facade\ProductToTouchInterface $touchFacade
      * @param \Spryker\Zed\Product\Dependency\Facade\ProductToLocaleInterface $localeFacade
@@ -153,6 +151,7 @@ class ProductUrlManager extends SprykerProductUrlMananger implements ProductUrlM
             ->setFkLocale($localizedUrlTransfer->getLocale()->getIdLocale())
             ->setFkStore($idStore)
             ->setFkResourceProductAbstract($productAbstractTransfer->getIdProductAbstract());
+
         return $urlTransfer;
     }
 

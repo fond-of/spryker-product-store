@@ -8,6 +8,8 @@ use Spryker\Zed\Product\Dependency\Plugin\ProductAbstractPluginCreateInterface;
 
 /**
  * @method \FondOfSpryker\Zed\ProductUrlStore\Business\ProductStoreUrlFacadInterface getFacade()
+ * @method \FondOfSpryker\Zed\ProductUrlStore\ProductUrlStoreConfig getConfig()
+ * @method \FondOfSpryker\Zed\ProductUrlStore\Persistence\ProductUrlStoreQueryContainerInterface getQueryContainer()
  */
 class UrlProductAbstractAfterCreatePlugin extends AbstractPlugin implements ProductAbstractPluginCreateInterface
 {

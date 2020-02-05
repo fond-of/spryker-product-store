@@ -2,8 +2,8 @@
 
 namespace FondOfSpryker\Zed\ProductUrlStore\Dependency\Facade;
 
-use Generated\Shared\Transfer\UrlTransfer;
 use FondOfSpryker\Zed\Product\Dependency\Facade\ProductToUrlBridge as FondOfSprykerProductToUrlBridge;
+use Generated\Shared\Transfer\UrlTransfer;
 
 class ProductToUrlBridge extends FondOfSprykerProductToUrlBridge implements ProductToUrlInterface
 {
