@@ -7,7 +7,7 @@ use Generated\Shared\Transfer\ProductUrlTransfer;
 use Spryker\Zed\Product\Business\ProductFacade as SprykerProductFacade;
 
 /**
- * @method \FondOfSpryker\Zed\ProductUrlStore\Business\ProductUrlBusinessFactory getFactory()
+ * @method \FondOfSpryker\Zed\ProductUrlStore\Business\ProductUrlStoreBusinessFactory getFactory()
  */
 class ProductUrlStoreFacade extends SprykerProductFacade implements ProductUrlStoreFacadeInterface
 {
@@ -41,5 +41,19 @@ class ProductUrlStoreFacade extends SprykerProductFacade implements ProductUrlSt
         return $this->getFactory()
             ->createProductUrlManager()
             ->updateProductUrl($productAbstractTransfer);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     *
+     * @param \Generated\Shared\Transfer\ProductAbstractTransfer $productAbstractTransfer
+     *
+     * @return bool
+     */
+    public function canPersistProductAbstractUrl(ProductAbstractTransfer $productAbstractTransfer): bool
+    {
+        return $this->getFactory()->createProductUrlManager()->canPersistProductUrl($productAbstractTransfer);
     }
 }
