@@ -2,7 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, spryker_upgrade ]
+  pull_request:
+    types: [ assigned, opened, synchronize, reopened ]
 
 jobs:
   continous-integration:
