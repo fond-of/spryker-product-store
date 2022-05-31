@@ -1,11 +1,27 @@
 {
   "name": "fond-of-spryker/product-url-store",
-  "description": "cart rest api.",
+  "description": "Add Store Relationship to product url",
   "license": "MIT",
   "authors": [
     {
       "name": "Daniel Rose",
       "email": "daniel-rose@gmx.de"
+    },
+    {
+      "name": "Jozsef Geng",
+      "email": "gengjozsef86@gmail.com"
+    },
+    {
+      "name": "Markus Nörenberg",
+      "email": "noerenberg.markus@gmail.com"
+    },
+    {
+      "name": "Pascal Fischer",
+      "email": "p-fischer@gmx.net"
+    },
+    {
+      "name": "Julian Hyatt",
+      "email": "dev@julianzimmermann.dev"
     }
   ],
   "scripts": {
