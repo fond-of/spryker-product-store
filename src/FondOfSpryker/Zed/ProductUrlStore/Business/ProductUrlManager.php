@@ -237,9 +237,15 @@ class ProductUrlManager extends SprykerProductUrlMananger implements ProductUrlM
 
                 $urlTransfer = $this->urlFacade->findUrl($urlTransfer);
 
-                if ($urlTransfer && $urlTransfer->getIdUrl() && $availableStore->getIdStore() === $urlTransfer->getFkStore()) {
-                    $this->urlFacade->deleteUrl($urlTransfer);
+                if ($urlTransfer === null
+                    || $urlTransfer->getIdUrl() === null
+                    || $availableStore->getIdStore() !== $urlTransfer->getFkStore()
+                    || $urlTransfer->getFkResourceProductAbstract() !== $productAbstractTransfer->getIdProductAbstract()
+                ) {
+                    continue;
                 }
+
+                $this->urlFacade->deleteUrl($urlTransfer);
             }
         }
     }
