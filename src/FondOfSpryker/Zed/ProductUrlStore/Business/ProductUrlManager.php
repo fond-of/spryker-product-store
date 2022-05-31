@@ -237,7 +237,8 @@ class ProductUrlManager extends SprykerProductUrlMananger implements ProductUrlM
 
                 $urlTransfer = $this->urlFacade->findUrl($urlTransfer);
 
-                if ($urlTransfer === null
+                if (
+                    $urlTransfer === null
                     || $urlTransfer->getIdUrl() === null
                     || $availableStore->getIdStore() !== $urlTransfer->getFkStore()
                     || $urlTransfer->getFkResourceProductAbstract() !== $productAbstractTransfer->getIdProductAbstract()
