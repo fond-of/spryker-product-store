@@ -32,7 +32,7 @@
   },
   "require": {
     "php": ">=7.4",
-    "fond-of-spryker/product": "dev-dev-upgrade/cw42",
+    "fond-of-spryker/product": "dev-upgrade/cw42",
     "fond-of-spryker/url-store": "dev-spryker_upgrade"
   },
   "require-dev": {
