@@ -2,7 +2,9 @@
 
 namespace FondOfSpryker\Zed\ProductUrlStore\Dependency\Facade;
 
-interface ProductUrlStoreToStoreFacadeInterface
+use Spryker\Zed\Product\Dependency\Facade\ProductToStoreInterface;
+
+interface ProductUrlStoreToStoreFacadeInterface extends ProductToStoreInterface
 {
     /**
      * @return array<\Generated\Shared\Transfer\StoreTransfer>

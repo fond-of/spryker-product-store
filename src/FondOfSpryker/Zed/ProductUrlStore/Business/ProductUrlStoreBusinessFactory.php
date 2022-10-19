@@ -24,6 +24,7 @@ class ProductUrlStoreBusinessFactory extends SprykerProductBusinessFactory
             $this->getLocaleFacade(),
             $this->getQueryContainer(),
             $this->createProductUrlGenerator(),
+            $this->createProductEventTrigger(),
             $this->getStoreFacade(),
         );
     }

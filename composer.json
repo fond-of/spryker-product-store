@@ -21,7 +21,7 @@
     },
     {
       "name": "Julian Hyatt",
-      "email": "dev@julianzimmermann.dev"
+      "email": "dev@jzit.de"
     }
   ],
   "scripts": {
@@ -31,8 +31,8 @@
     "phpstan": "make phpstan"
   },
   "require": {
-    "php": ">=7.3",
-    "fond-of-spryker/product": "dev-spryker_upgrade",
+    "php": ">=7.4",
+    "fond-of-spryker/product": "dev-dev-upgrade/cw42",
     "fond-of-spryker/url-store": "dev-spryker_upgrade"
   },
   "require-dev": {

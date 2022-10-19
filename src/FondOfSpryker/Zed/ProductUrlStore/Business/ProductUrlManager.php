@@ -8,6 +8,7 @@ use Generated\Shared\Transfer\LocalizedUrlTransfer;
 use Generated\Shared\Transfer\ProductAbstractTransfer;
 use Generated\Shared\Transfer\ProductUrlTransfer;
 use Generated\Shared\Transfer\UrlTransfer;
+use Spryker\Zed\Product\Business\Product\Trigger\ProductEventTriggerInterface;
 use Spryker\Zed\Product\Business\Product\Url\ProductUrlGeneratorInterface;
 use Spryker\Zed\Product\Business\Product\Url\ProductUrlManager as SprykerProductUrlMananger;
 use Spryker\Zed\Product\Dependency\Facade\ProductToLocaleInterface;
@@ -35,8 +36,9 @@ class ProductUrlManager extends SprykerProductUrlMananger implements ProductUrlM
      * @param \FondOfSpryker\Zed\ProductUrlStore\Dependency\Facade\ProductUrlStoreToUrlFacadeInterface $urlFacade
      * @param \Spryker\Zed\Product\Dependency\Facade\ProductToTouchInterface $touchFacade
      * @param \Spryker\Zed\Product\Dependency\Facade\ProductToLocaleInterface $localeFacade
-     * @param \FondOfSpryker\Zed\ProductUrlStore\Persistence\ProductUrlStoreQueryContainerInterface $productQueryContainer
+     * @param \Spryker\Zed\Product\Persistence\ProductQueryContainerInterface $productQueryContainer
      * @param \Spryker\Zed\Product\Business\Product\Url\ProductUrlGeneratorInterface $urlGenerator
+     * @param \Spryker\Zed\Product\Business\Product\Trigger\ProductEventTriggerInterface $productEventTrigger
      * @param \FondOfSpryker\Zed\ProductUrlStore\Dependency\Facade\ProductUrlStoreToStoreFacadeInterface $storeFacade
      */
     public function __construct(
@@ -45,9 +47,10 @@ class ProductUrlManager extends SprykerProductUrlMananger implements ProductUrlM
         ProductToLocaleInterface $localeFacade,
         ProductQueryContainerInterface $productQueryContainer,
         ProductUrlGeneratorInterface $urlGenerator,
+        ProductEventTriggerInterface $productEventTrigger,
         ProductUrlStoreToStoreFacadeInterface $storeFacade
     ) {
-        parent::__construct($urlFacade, $touchFacade, $localeFacade, $productQueryContainer, $urlGenerator);
+        parent::__construct($urlFacade, $touchFacade, $localeFacade, $productQueryContainer, $urlGenerator, $productEventTrigger);
         $this->storeFacade = $storeFacade;
         $this->urlFacade = $urlFacade;
         $this->productQueryContainer = $productQueryContainer;
