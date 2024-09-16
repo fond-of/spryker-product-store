@@ -31,9 +31,9 @@
     "phpstan": "make phpstan"
   },
   "require": {
-    "php": ">=7.4",
-    "fond-of-spryker/product": "dev-upgrade/cw42",
-    "fond-of-spryker/url-store": "dev-spryker_upgrade"
+    "php": ">=8.0",
+    "fond-of-spryker/product": "dev-main",
+    "fond-of-spryker/url-store": "dev-main"
   },
   "require-dev": {
     "fond-of-codeception/spryker": "^1.0",
