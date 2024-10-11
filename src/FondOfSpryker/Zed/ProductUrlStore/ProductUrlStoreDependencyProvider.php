@@ -23,7 +23,6 @@ class ProductUrlStoreDependencyProvider extends SprykerProductDependencyProvider
     {
         $container = parent::provideBusinessLayerDependencies($container);
         $container = $this->addStoreFacade($container);
-        $container = $this->addUrlFacade($container);
 
         return $container;
     }
@@ -50,20 +49,6 @@ class ProductUrlStoreDependencyProvider extends SprykerProductDependencyProvider
     {
         $container[self::FACADE_STORE] = static function (Container $container) {
             return new ProductUrlStoreToStoreFacadeBridge($container->getLocator()->store()->facade());
-        };
-
-        return $container;
-    }
-
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
-    protected function addUrlFacade(Container $container): Container
-    {
-        $container[self::FACADE_URL] = static function (Container $container) {
-            return new ProductUrlStoreToUrlFacadeBridge($container->getLocator()->url()->facade());
         };
 
         return $container;

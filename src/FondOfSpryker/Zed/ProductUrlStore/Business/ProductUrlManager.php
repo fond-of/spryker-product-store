@@ -2,6 +2,7 @@
 
 namespace FondOfSpryker\Zed\ProductUrlStore\Business;
 
+use FondOfSpryker\Zed\Product\Business\Product\Url\ProductUrlManager as FosProductUrlManager;
 use FondOfSpryker\Zed\ProductUrlStore\Dependency\Facade\ProductUrlStoreToStoreFacadeInterface;
 use FondOfSpryker\Zed\ProductUrlStore\Dependency\Facade\ProductUrlStoreToUrlFacadeInterface;
 use Generated\Shared\Transfer\LocalizedUrlTransfer;
@@ -10,12 +11,11 @@ use Generated\Shared\Transfer\ProductUrlTransfer;
 use Generated\Shared\Transfer\UrlTransfer;
 use Spryker\Zed\Product\Business\Product\Trigger\ProductEventTriggerInterface;
 use Spryker\Zed\Product\Business\Product\Url\ProductUrlGeneratorInterface;
-use Spryker\Zed\Product\Business\Product\Url\ProductUrlManager as SprykerProductUrlMananger;
 use Spryker\Zed\Product\Dependency\Facade\ProductToLocaleInterface;
 use Spryker\Zed\Product\Dependency\Facade\ProductToTouchInterface;
 use Spryker\Zed\Product\Persistence\ProductQueryContainerInterface;
 
-class ProductUrlManager extends SprykerProductUrlMananger implements ProductUrlManagerInterface
+class ProductUrlManager extends FosProductUrlManager
 {
     /**
      * @var \FondOfSpryker\Zed\ProductUrlStore\Dependency\Facade\ProductUrlStoreToStoreFacadeInterface
